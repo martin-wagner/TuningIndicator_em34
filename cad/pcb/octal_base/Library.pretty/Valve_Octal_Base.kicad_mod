@@ -1,0 +1,200 @@
+(footprint "Valve_Octal_Base"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "8-pin round valve")
+	(tags "valve")
+	(property "Reference" "J1"
+		(at -6.17 -11.17 0)
+		(layer "F.SilkS")
+		(uuid "ea8f9708-cc24-4756-8bf3-1e528472f113")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Octal Base"
+		(at -6.17 0.08 0)
+		(layer "F.Fab")
+		(uuid "b663a462-e45e-462a-90e2-0d7f13602e91")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" "Valve:Valve_Octal"
+		(at 1.45 1.45 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c64c45a8-12be-4d54-9375-9ac31b78e22f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 1.45 1.45 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6f63ac83-dea6-4c5e-80b6-f5500452d30a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(at 1.45 1.45 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4db34035-bb49-4203-a713-3afbb07d7b3e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_circle
+		(center -6.17 -6.17)
+		(end 5.33 -6.17)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "9bd62b8e-7d6a-4685-b029-54711516438b")
+	)
+	(fp_circle
+		(center -2.92 -2.92)
+		(end -2.48 -2.47)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "8cbfb2f9-797b-4536-8969-a93414f4a68c")
+	)
+	(fp_circle
+		(center -6.17 -6.17)
+		(end 5.83 -6.17)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "4f5a3023-5723-402f-8dac-33aec4fde27a")
+	)
+	(fp_circle
+		(center -6.17 -6.17)
+		(end 5.33 -6.17)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "301b0e92-4a26-4a00-b4f7-9996187eb030")
+	)
+	(fp_text user "${REFERENCE}"
+		(at -6.17 -11.17 0)
+		(layer "F.Fab")
+		(uuid "a8413648-5577-45e1-81a1-b9a1bfb96909")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fff88378-d5db-4e11-bc05-7721d6915f80")
+	)
+	(pad "2" thru_hole circle
+		(at 2.555 -6.17)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "351ceb0e-7c38-4baa-b997-0e925acae730")
+	)
+	(pad "3" thru_hole circle
+		(at 0 -12.34)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dd6b56b0-6d0f-4e77-90ea-f34fb3b652cc")
+	)
+	(pad "4" thru_hole circle
+		(at -6.17 -14.895)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "37f8a35e-818a-4c46-bb72-e2be44ac107a")
+	)
+	(pad "5" thru_hole circle
+		(at -12.34 -12.34)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b6bcc489-eae5-49bc-8d4a-1ff9757f7533")
+	)
+	(pad "6" thru_hole circle
+		(at -14.895 -6.17)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "562b6489-26f0-4b16-bfe8-cf1a9c5f592c")
+	)
+	(pad "7" thru_hole circle
+		(at -12.34 0)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2347eed0-0b80-4f5a-a737-e8823d3de55b")
+	)
+	(pad "8" thru_hole circle
+		(at -6.17 2.555)
+		(size 3.81 3.81)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "46563634-3c79-4ba2-9d88-661c580c62e3")
+	)
+	(model "${KICAD8_3DMODEL_DIR}/Valve.3dshapes/Valve_Octal.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

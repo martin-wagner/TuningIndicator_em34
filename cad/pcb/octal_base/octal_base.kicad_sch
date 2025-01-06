@@ -5,9 +5,9 @@
 	(uuid "cd257864-529c-4fd8-bae9-39213abc8d77")
 	(paper "A4")
 	(title_block
-		(title "Adaptor octal socket")
+		(title "Adaptor octal base")
 		(date "2025-01-06")
-		(rev "2-A")
+		(rev "1-A")
 		(company "Martin Wagner DL2WAG")
 		(comment 1 "Based on Retronics 6U5")
 	)
@@ -2435,7 +2435,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Retronics_Passives:Fuse_1206_3216Metric"
+		(property "Footprint" "Fuse_1206_3216Metric"
 			(at 62.23 84.328 90)
 			(effects
 				(font
@@ -2724,7 +2724,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Retronics_Passives:CP_Radial_D8.0mm_P3.50mm_H21mm"
+		(property "Footprint" "CP_Radial_D8.0mm_P3.50mm_H21mm"
 			(at 89.8652 95.25 0)
 			(effects
 				(font
@@ -3007,7 +3007,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Retronics_Discrete:D_SOD-323_HandSoldering"
+		(property "Footprint" "D_SOD-323_HandSoldering"
 			(at 50.8 81.915 0)
 			(effects
 				(font
@@ -3430,7 +3430,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Retronics_Passives:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 74.93 84.328 90)
 			(effects
 				(font
@@ -3572,7 +3572,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Retronics_Discrete:D_SOD-323_HandSoldering"
+		(property "Footprint" "D_SOD-323_HandSoldering"
 			(at 50.8 86.995 0)
 			(effects
 				(font
@@ -3648,7 +3648,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Octal"
+		(property "Footprint" "Library:Valve_Octal_Base"
 			(at 34.29 43.18 0)
 			(effects
 				(font

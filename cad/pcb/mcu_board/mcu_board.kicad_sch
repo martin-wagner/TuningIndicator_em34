@@ -6748,7 +6748,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "153851c2-7c9e-4401-b539-264b056b4430")
-		(property "Reference" "R101"
+		(property "Reference" "R10"
 			(at 140.208 76.2578 0)
 			(effects
 				(font
@@ -6811,7 +6811,7 @@
 		(instances
 			(project "mcu_board"
 				(path "/88323e32-4acb-49fb-898d-0e3c32abded2"
-					(reference "R101")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -8246,7 +8246,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7c06d665-6c06-43e7-8b36-085bf9c3cfe0")
-		(property "Reference" "C101"
+		(property "Reference" "C11"
 			(at 88.138 84.074 0)
 			(effects
 				(font
@@ -8300,7 +8300,7 @@
 		(instances
 			(project "mcu_board"
 				(path "/88323e32-4acb-49fb-898d-0e3c32abded2"
-					(reference "C101")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -9177,7 +9177,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b68d04e7-3475-40e6-b516-98ab49537da7")
-		(property "Reference" "R102"
+		(property "Reference" "R11"
 			(at 150.368 76.2578 0)
 			(effects
 				(font
@@ -9240,7 +9240,7 @@
 		(instances
 			(project "mcu_board"
 				(path "/88323e32-4acb-49fb-898d-0e3c32abded2"
-					(reference "R102")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -9851,7 +9851,7 @@
 				)
 			)
 		)
-		(property "Footprint" "myDevices:0527450897"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical_SMD_Pin1Left"
 			(at 133.35 175.26 0)
 			(effects
 				(font
@@ -9986,7 +9986,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed536e2a-c5ba-495a-b4fd-5ee1171140e8")
-		(property "Reference" "R103"
+		(property "Reference" "R12"
 			(at 159.258 76.2578 0)
 			(effects
 				(font
@@ -10049,7 +10049,7 @@
 		(instances
 			(project "mcu_board"
 				(path "/88323e32-4acb-49fb-898d-0e3c32abded2"
-					(reference "R103")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -10353,7 +10353,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb4f0d2c-5f15-43a3-8730-9ce671124f24")
-		(property "Reference" "R104"
+		(property "Reference" "R13"
 			(at 169.418 76.2578 0)
 			(effects
 				(font
@@ -10416,7 +10416,7 @@
 		(instances
 			(project "mcu_board"
 				(path "/88323e32-4acb-49fb-898d-0e3c32abded2"
-					(reference "R104")
+					(reference "R13")
 					(unit 1)
 				)
 			)

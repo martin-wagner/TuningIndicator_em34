@@ -7128,7 +7128,6 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -9888,7 +9887,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b68d04e7-3475-40e6-b516-98ab49537da7")
 		(property "Reference" "R7"
 			(at 150.368 81.3378 0)
@@ -9936,12 +9934,11 @@
 			)
 		)
 		(property "Place" "NP"
-			(at 148.59 82.55 0)
+			(at 148.59 82.804 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -10697,7 +10694,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ed536e2a-c5ba-495a-b4fd-5ee1171140e8")
 		(property "Reference" "R8"
 			(at 159.258 81.3378 0)
@@ -10745,12 +10741,11 @@
 			)
 		)
 		(property "Place" "NP"
-			(at 157.48 82.55 0)
+			(at 157.48 82.804 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -11064,7 +11059,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "fb4f0d2c-5f15-43a3-8730-9ce671124f24")
 		(property "Reference" "R9"
 			(at 169.418 81.3378 0)
@@ -11112,12 +11106,11 @@
 			)
 		)
 		(property "Place" "NP"
-			(at 167.64 82.55 0)
+			(at 167.64 82.804 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"

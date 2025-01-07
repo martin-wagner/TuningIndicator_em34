@@ -1,0 +1,18 @@
+"Source:","/home/martin/elektronik/radios/TuningIndicator_em34/cad/pcb/octal_base/octal_base.kicad_sch"
+"Date:","2025-01-07T11:59:14+0100"
+"Tool:","Eeschema 8.0.7-8.0.7-0~ubuntu22.04.1"
+"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value.py"
+"Component Count:","12"
+
+"Collated Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","DNP","Comments","Datasheet","Description","Footprint"
+"1","1","C1","1000µF 16V","Device:C_Polarized","CP_Radial_D8.0mm_P3.50mm_H21mm","~","","","~","Polarized capacitor","CP_Radial_D8.0mm_P3.50mm_H21mm"
+"2","1","D1","3.3V","Device:D_Zener","Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder","~","","","~","Zener diode","Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+"3","4","D2, D3, D4, D5","1N5819W","Diode:1N5819WS","D_SOD-323_HandSoldering","https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf","","","https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf","40V 600mV@1A 1A SOD-323 Schottky Barrier Diodes, SOD-323","D_SOD-323_HandSoldering"
+"4","1","F1","T1A","Device:Fuse","Fuse_1206_3216Metric","~","","","~","Fuse","Fuse_1206_3216Metric"
+"5","1","FB1","330Ω@100MHz","Device:FerriteBead","L_0805_2012Metric_Pad1.15x1.40mm_HandSolder","~","","50mΩ@DC","~","Ferrite bead","L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+"6","1","J1","Octal Base","Connector_Generic:Conn_01x08","Library:Valve_Octal_Base","~","","","~","Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)","Library:Valve_Octal_Base"
+"7","1","J2","Pin Socket","Connector:Conn_01x05_Socket","PinSocket_1x05_P2.54mm_Vertical","~","","","~","Generic connector, single row, 01x05, script generated","PinSocket_1x05_P2.54mm_Vertical"
+"8","1","R1","1M","Device:R","Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder","~","","","~","Resistor","Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+"9","1","R2","4k7","Device:R","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~","","","~","Resistor","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"

@@ -1,3 +1,8 @@
 scm
 
 pcb
+
+pcb aufdruck em>>8<<4
+pcb aufdruck pin1 lcd fehlt
+elko passt nicht
+Stecker Debug SWG GND zwischen DIO und CLK, sonst verbindet SWD nicht.

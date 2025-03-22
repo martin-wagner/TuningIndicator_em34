@@ -1,5 +1,6 @@
 /*
 6U5 Digital Replica by retronics.no
+EM34 Digital Replica by Martin Wagner DL2WAG
 */
 
 #include <Arduino.h> 

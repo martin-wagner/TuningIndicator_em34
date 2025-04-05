@@ -15,15 +15,15 @@ EM34 Digital Replica by Martin Wagner DL2WAG
 #define GREEN_BRIGHT RGB565(0, 255, 80)
 #define GREEN_MEDIUM RGB565(0, 180, 60)
 #define GREEN_DARK RGB565(0, 80, 35)
-#define CENTER_X 62
-#define CENTER_Y 74
+#define CENTER_X 63
+#define CENTER_Y 75
 #define OUTER_RADIUS 52
 #define INNER_RADIUS 24
 #define PIN_AGC PB1
 #define BRIGHTNESS 255 // Max 255
 
 Arduino_DataBus *bus = new Arduino_HWSPI(PIN_DC, PIN_CS);
-Arduino_GFX *gfx = new Arduino_GC9107(bus, PIN_RES, 0 /* rotation */, true /* IPS */);
+Arduino_GFX *gfx = new Arduino_GC9107(bus, PIN_RES, 0 /* rotation */, true /* IPS */, GC9107_TFTWIDTH, GC9107_TFTHEIGHT, 0, 0, 0, 0);
 HardwareSerial uart2(PA3, PA2);
 uint8_t oldHalfAngle;
 uint32_t lastDisplayUpdate=millis();
@@ -47,18 +47,30 @@ void setup(void)
   if (!gfx->begin())
   {
     uart2.println("gfx->begin() failed!");
+    delay(1000);
+    NVIC_SystemReset();
   }
   gfx->fillScreen(BLACK);
-  for(int16_t i = 46; i < 315; i++)
-  {
-    drawLine(i,GREEN_MEDIUM);
-  }
-  drawLine(315, GREEN_BRIGHT);
-  drawLine(45, GREEN_BRIGHT);
-  for(int16_t i = 316; i < 404; i++)
+  //circle
+  for(int16_t i = 0; i < 360; i++)
   {
     drawLine(i,GREEN_DARK);
   }
+  //left
+  for(int16_t i = 46; i < 134; i++)
+  {
+    drawLine(i,GREEN_MEDIUM);
+  }
+  drawLine(45, GREEN_BRIGHT);
+  drawLine(135, GREEN_BRIGHT);
+  //right
+  for(int16_t i = 226; i < 314; i++)
+  {
+    drawLine(i,GREEN_MEDIUM);
+  }
+  drawLine(225, GREEN_BRIGHT);
+  drawLine(315, GREEN_BRIGHT);
+
   delay(1000);
 }
 
@@ -77,24 +89,43 @@ void loop()
   uint8_t newHalfAngle=(uint8_t)(((agcFiltered/11)+15.0*log10(1+agcFiltered))/3);
   newHalfAngle=newHalfAngle>45?45:newHalfAngle;
 
+  //todo remove
+  uart2.println("Raw: " + String(agcFiltered) + ", Angle: " + String(newHalfAngle));
+
   //Display update
   if(newHalfAngle>oldHalfAngle)
   {
     for(int8_t i=oldHalfAngle; i<newHalfAngle; i++)
     {
+      //top
+      drawLine(135+i,GREEN_MEDIUM);
+      drawLine(225-i,GREEN_MEDIUM);
+      //bottom
       drawLine(315+i,GREEN_MEDIUM);
       drawLine(405-i,GREEN_MEDIUM);
     }
+    //bottom
     drawLine(315+newHalfAngle,GREEN_BRIGHT);
     drawLine(405-newHalfAngle,GREEN_BRIGHT);
+    //top
+    drawLine(135+newHalfAngle,GREEN_BRIGHT);
+    drawLine(225-newHalfAngle,GREEN_BRIGHT);
   }
   else if(newHalfAngle<oldHalfAngle)
   {
     for(int8_t i=oldHalfAngle; i>newHalfAngle; i--)
     {
+      //top
+      drawLine(135+i,GREEN_DARK);
+      drawLine(225-i,GREEN_DARK);
+      //bottom
       drawLine(315+i,GREEN_DARK);
       drawLine(405-i,GREEN_DARK);
     }
+    //top
+    drawLine(135+newHalfAngle,GREEN_BRIGHT);
+    drawLine(225-newHalfAngle,GREEN_BRIGHT);
+    //bottom
     drawLine(315+newHalfAngle,GREEN_BRIGHT);
     drawLine(405-newHalfAngle,GREEN_BRIGHT);
   }

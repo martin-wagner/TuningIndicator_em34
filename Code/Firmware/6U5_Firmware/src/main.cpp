@@ -5,6 +5,7 @@ EM34 Digital Replica by Martin Wagner DL2WAG
 
 #include <Arduino.h> 
 #include <Arduino_GFX_Library.h> //https://github.com/moononournation/Arduino_GFX | GFX Library for Arduino@^1.4.7
+#include <math.h>
 
 #define PIN_BACKLIGHT PB0
 #define PIN_DC PB11 
@@ -14,7 +15,7 @@ EM34 Digital Replica by Martin Wagner DL2WAG
 // PIN_SDA A7
 #define GREEN_BRIGHT RGB565(0, 255, 80)
 #define GREEN_MEDIUM RGB565(0, 180, 60)
-#define GREEN_DARK RGB565(0, 80, 35)
+#define GREEN_DARK RGB565(10, 80, 35)
 #define CENTER_X 63
 #define CENTER_Y 75
 #define OUTER_RADIUS 52
@@ -27,7 +28,7 @@ Arduino_GFX *gfx = new Arduino_GC9107(bus, PIN_RES, 0 /* rotation */, true /* IP
 HardwareSerial uart2(PA3, PA2);
 uint8_t oldHalfAngleBottom;
 uint8_t oldHalfAngleTop;
-double agcFiltered;
+float agcFiltered;
 uint8_t fadeInCounter=0;
 uint32_t fadeInLastChange=millis();
 
@@ -56,14 +57,14 @@ void setup(void)
     drawLine(i,GREEN_DARK);
   }
   //left
-  for(int16_t i = 46; i < 134; i++)
+  for(int16_t i = 45; i < 135; i++)
   {
     drawLine(i,GREEN_MEDIUM);
   }
   drawLine(45, GREEN_BRIGHT);
   drawLine(135, GREEN_BRIGHT);
   //right
-  for(int16_t i = 226; i < 314; i++)
+  for(int16_t i = 225; i < 315; i++)
   {
     drawLine(i,GREEN_MEDIUM);
   }
@@ -82,17 +83,26 @@ void loop()
     analogWrite(PIN_BACKLIGHT, fadeInCounter*fadeInCounter);
     fadeInLastChange=millis();
   }
-  //AGC measurement, filtering and mapping to display angle //todo modify for em34
+  //AGC measurement, filtering and mapping to display angle
+  //-0.00321774x^{3}+0.311724x^{2}-9.33456x+90.9922 (0 ... 17V) low sensitivity (bottom)
+  //-0.184343x^{3}+4.50276x^{2}-35.8763x+94.963     (0...7V)    high sensivity (top)
   uint16_t agcRaw=analogRead(PIN_AGC);
   agcFiltered=(9.0*agcFiltered+agcRaw)/10.0;
-  uint8_t newHalfAngleBottom=(uint8_t)(((agcFiltered/11)+15.0*log10(1+agcFiltered))/3);
-  uint8_t newHalfAngleTop = (uint8_t)((((agcFiltered * 4)/11)+15.0*log10(1+(agcFiltered * 4)))/3);
+  float x = agcFiltered / 1024 * 22.5; //agc voltage [V]
+  uint8_t newHalfAngleBottom = 45;
+  if (x < 17.0) {
+    newHalfAngleBottom = (uint8_t)((float)45.0 - (-0.00321774*pow(x,3)+0.311724*pow(x,2)-9.33456*x+89) / 2);
+  }
+  uint8_t newHalfAngleTop = 45;
+  if (x < 7.0) {
+    newHalfAngleTop = (uint8_t)((float)45.0 -(-0.184343*pow(x,3)+4.50276*pow(x,2)-35.8763*x+94.963) / 2);
+  }
   //crop
   newHalfAngleBottom=newHalfAngleBottom>45?45:newHalfAngleBottom;
   newHalfAngleTop=newHalfAngleTop>45?45:newHalfAngleTop;
 
   //todo remove
-  uart2.println("Raw: " + String(agcFiltered) + ", Volt: " + String(agcFiltered / 1024 * 22.5) + ", Angle Bot: " + String(newHalfAngleBottom) + ", Angle Top: " + String(newHalfAngleTop));
+  uart2.println("Raw: " + String(agcFiltered) + ", Volt: " + String(x) + ", Angle Bot: " + String(newHalfAngleBottom) + ", Angle Top: " + String(newHalfAngleTop));
 
   //Display update
   if(newHalfAngleTop>oldHalfAngleTop)

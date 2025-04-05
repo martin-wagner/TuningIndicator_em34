@@ -25,10 +25,9 @@ EM34 Digital Replica by Martin Wagner DL2WAG
 Arduino_DataBus *bus = new Arduino_HWSPI(PIN_DC, PIN_CS);
 Arduino_GFX *gfx = new Arduino_GC9107(bus, PIN_RES, 0 /* rotation */, true /* IPS */, GC9107_TFTWIDTH, GC9107_TFTHEIGHT, 0, 0, 0, 0);
 HardwareSerial uart2(PA3, PA2);
-uint8_t oldHalfAngle;
-uint32_t lastDisplayUpdate=millis();
+uint8_t oldHalfAngleBottom;
+uint8_t oldHalfAngleTop;
 double agcFiltered;
-uint32_t lastDirectionChange=millis();
 uint8_t fadeInCounter=0;
 uint32_t fadeInLastChange=millis();
 
@@ -41,7 +40,7 @@ void setup(void)
   pinMode(PIN_AGC, INPUT);
   pinMode(PIN_BACKLIGHT, OUTPUT);
   digitalWrite(PIN_BACKLIGHT,LOW);
-  uart2.println("Digital 6U5 replacement.");
+  uart2.println("Digital EM34 replacement.");
 
   //Display startup
   if (!gfx->begin())
@@ -83,53 +82,61 @@ void loop()
     analogWrite(PIN_BACKLIGHT, fadeInCounter*fadeInCounter);
     fadeInLastChange=millis();
   }
-  //AGC measurement, filtering and mapping to display angle
+  //AGC measurement, filtering and mapping to display angle //todo modify for em34
   uint16_t agcRaw=analogRead(PIN_AGC);
   agcFiltered=(9.0*agcFiltered+agcRaw)/10.0;
-  uint8_t newHalfAngle=(uint8_t)(((agcFiltered/11)+15.0*log10(1+agcFiltered))/3);
-  newHalfAngle=newHalfAngle>45?45:newHalfAngle;
+  uint8_t newHalfAngleBottom=(uint8_t)(((agcFiltered/11)+15.0*log10(1+agcFiltered))/3);
+  uint8_t newHalfAngleTop = (uint8_t)((((agcFiltered * 4)/11)+15.0*log10(1+(agcFiltered * 4)))/3);
+  //crop
+  newHalfAngleBottom=newHalfAngleBottom>45?45:newHalfAngleBottom;
+  newHalfAngleTop=newHalfAngleTop>45?45:newHalfAngleTop;
 
   //todo remove
-  uart2.println("Raw: " + String(agcFiltered) + ", Angle: " + String(newHalfAngle));
+  uart2.println("Raw: " + String(agcFiltered) + ", Volt: " + String(agcFiltered / 1024 * 22.5) + ", Angle Bot: " + String(newHalfAngleBottom) + ", Angle Top: " + String(newHalfAngleTop));
 
   //Display update
-  if(newHalfAngle>oldHalfAngle)
+  if(newHalfAngleTop>oldHalfAngleTop)
   {
-    for(int8_t i=oldHalfAngle; i<newHalfAngle; i++)
+    for(int8_t i=oldHalfAngleTop; i<newHalfAngleTop; i++)
     {
-      //top
       drawLine(135+i,GREEN_MEDIUM);
       drawLine(225-i,GREEN_MEDIUM);
-      //bottom
+    }
+    drawLine(135+newHalfAngleTop,GREEN_BRIGHT);
+    drawLine(225-newHalfAngleTop,GREEN_BRIGHT);
+  }
+  if(newHalfAngleTop<oldHalfAngleTop)
+  {
+    for(int8_t i=oldHalfAngleTop; i>newHalfAngleTop; i--)
+    {
+      drawLine(135+i,GREEN_DARK);
+      drawLine(225-i,GREEN_DARK);
+    }
+    drawLine(135+newHalfAngleTop,GREEN_BRIGHT);
+    drawLine(225-newHalfAngleTop,GREEN_BRIGHT);
+  }
+  if(newHalfAngleBottom>oldHalfAngleBottom)
+  {
+    for(int8_t i=oldHalfAngleBottom; i<newHalfAngleBottom; i++)
+    {
       drawLine(315+i,GREEN_MEDIUM);
       drawLine(405-i,GREEN_MEDIUM);
     }
-    //bottom
-    drawLine(315+newHalfAngle,GREEN_BRIGHT);
-    drawLine(405-newHalfAngle,GREEN_BRIGHT);
-    //top
-    drawLine(135+newHalfAngle,GREEN_BRIGHT);
-    drawLine(225-newHalfAngle,GREEN_BRIGHT);
+    drawLine(315+newHalfAngleBottom,GREEN_BRIGHT);
+    drawLine(405-newHalfAngleBottom,GREEN_BRIGHT);
   }
-  else if(newHalfAngle<oldHalfAngle)
+  if(newHalfAngleBottom<oldHalfAngleBottom)
   {
-    for(int8_t i=oldHalfAngle; i>newHalfAngle; i--)
+    for(int8_t i=oldHalfAngleBottom; i>newHalfAngleBottom; i--)
     {
-      //top
-      drawLine(135+i,GREEN_DARK);
-      drawLine(225-i,GREEN_DARK);
-      //bottom
       drawLine(315+i,GREEN_DARK);
       drawLine(405-i,GREEN_DARK);
     }
-    //top
-    drawLine(135+newHalfAngle,GREEN_BRIGHT);
-    drawLine(225-newHalfAngle,GREEN_BRIGHT);
-    //bottom
-    drawLine(315+newHalfAngle,GREEN_BRIGHT);
-    drawLine(405-newHalfAngle,GREEN_BRIGHT);
+    drawLine(315+newHalfAngleBottom,GREEN_BRIGHT);
+    drawLine(405-newHalfAngleBottom,GREEN_BRIGHT);
   }
-  oldHalfAngle=newHalfAngle;
+  oldHalfAngleBottom=newHalfAngleBottom;
+  oldHalfAngleTop=newHalfAngleTop;
 }
 
 

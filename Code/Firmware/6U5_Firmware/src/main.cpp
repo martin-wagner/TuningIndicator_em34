@@ -11,6 +11,15 @@ EM34 Digital Replica by Martin Wagner DL2WAG
 #define PIN_DC PB11 
 #define PIN_CS PA4  
 #define PIN_RES PB2
+#define PIN_EN PB10
+#define PIN_TYPE0 PB5
+#define PIN_TYPE1 PB6
+#define PIN_TYPE2 PB7
+#define PIN_TYPE3 PB8
+
+static constexpr uint8_t TYPE_6U5 = 0;
+static constexpr uint8_t TYPE_EM34 = 1;
+
 // PIN_SCL A5
 // PIN_SDA A7
 #define GREEN_BRIGHT RGB565(0, 255, 80)
@@ -31,6 +40,8 @@ uint8_t oldHalfAngleTop;
 float agcFiltered;
 uint8_t fadeInCounter=0;
 uint32_t fadeInLastChange=millis();
+uint32_t fade = 0;
+uint8_t type = 0;
 
 void drawLine(uint16_t angle, uint16_t lineColor);
 
@@ -40,8 +51,29 @@ void setup(void)
   uart2.begin(115200);
   pinMode(PIN_AGC, INPUT);
   pinMode(PIN_BACKLIGHT, OUTPUT);
+  pinMode(PIN_EN, INPUT_PULLDOWN);
+  pinMode(PIN_TYPE0, INPUT_PULLUP);
+  pinMode(PIN_TYPE1, INPUT_PULLUP);
+  pinMode(PIN_TYPE2, INPUT_PULLUP);
+  pinMode(PIN_TYPE3, INPUT_PULLUP);
+  delay(5);
+  type = !digitalRead(PIN_TYPE0) | (!digitalRead(PIN_TYPE1) << 1) | (!digitalRead(PIN_TYPE2) << 2) | (!digitalRead(PIN_TYPE3) << 3);
   digitalWrite(PIN_BACKLIGHT,LOW);
-  uart2.println("Digital EM34 replacement.");
+
+  switch (type) {
+    case TYPE_6U5:
+      uart2.println("Digital 6U5 replacement.");
+      break;
+    case TYPE_EM34:
+      uart2.println("Digital EM34 replacement.");
+      break;
+    default:
+      uart2.println("Digital Eye Tube replacement. Type reading failed");
+      uart2.println("Supported types: 6U5 (" + String(TYPE_6U5) + "), EM64 (" + String(TYPE_EM34) + "). Found: " + String(type));
+      uart2.println("Reboot...");
+      delay(1000);
+      NVIC_SystemReset();
+  }
 
   //Display startup
   if (!gfx->begin())
@@ -80,9 +112,16 @@ void loop()
   if((fadeInCounter<BRIGHTNESS)&&(millis()-fadeInLastChange)>(120-(fadeInCounter/4)))
   {
     fadeInCounter++;
-    analogWrite(PIN_BACKLIGHT, fadeInCounter*fadeInCounter);
+    fade = fadeInCounter*fadeInCounter;
     fadeInLastChange=millis();
   }
+  //Enable
+  if(digitalRead(PIN_EN)) {
+    analogWrite(PIN_BACKLIGHT, fade);
+  } else {
+    analogWrite(PIN_BACKLIGHT, 0);
+  }
+
   //AGC measurement, filtering and mapping to display angle
   //-0.00321774x^{3}+0.311724x^{2}-9.33456x+90.9922 (0 ... 17V) low sensitivity (bottom)
   //-0.184343x^{3}+4.50276x^{2}-35.8763x+94.963     (0...7V)    high sensivity (top)
@@ -102,7 +141,7 @@ void loop()
   newHalfAngleTop=newHalfAngleTop>45?45:newHalfAngleTop;
 
   //todo remove
-  uart2.println("Raw: " + String(agcFiltered) + ", Volt: " + String(x) + ", Angle Bot: " + String(newHalfAngleBottom) + ", Angle Top: " + String(newHalfAngleTop));
+  //uart2.println("Raw: " + String(agcFiltered) + ", Volt: " + String(x) + ", Angle Bot: " + String(newHalfAngleBottom) + ", Angle Top: " + String(newHalfAngleTop));
 
   //Display update
   if(newHalfAngleTop>oldHalfAngleTop)

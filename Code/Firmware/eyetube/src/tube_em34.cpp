@@ -13,20 +13,20 @@ TubeEm34::TubeEm34(Color color, int32_t pinBacklightPwm, int32_t pinEnable,
 {
   //circle
   for (int16_t i = 0; i < 360; i++) {
-    drawLine(i, GREEN_DARK);
+    drawLine(i, cDark);
   }
   //left
   for (int16_t i = 45; i < 135; i++) {
-    drawLine(i, GREEN_MEDIUM);
+    drawLine(i, cMedium);
   }
-  drawLine(45, GREEN_BRIGHT);
-  drawLine(135, GREEN_BRIGHT);
+  drawLine(45, cBright);
+  drawLine(135, cBright);
   //right
   for (int16_t i = 225; i < 315; i++) {
-    drawLine(i, GREEN_MEDIUM);
+    drawLine(i, cMedium);
   }
-  drawLine(225, GREEN_BRIGHT);
-  drawLine(315, GREEN_BRIGHT);
+  drawLine(225, cBright);
+  drawLine(315, cBright);
 }
 
 void TubeEm34::run(uint16_t agcRaw, uint16_t brightness)
@@ -69,38 +69,37 @@ void TubeEm34::run(uint16_t agcRaw, uint16_t brightness)
   //Display update
   if (newHalfAngleTop > oldHalfAngleTop) {
     for (int8_t i = oldHalfAngleTop; i < newHalfAngleTop; i++) {
-      drawLine(135 + i, GREEN_MEDIUM);
-      drawLine(225 - i, GREEN_MEDIUM);
+      drawLine(135 + i, cMedium);
+      drawLine(225 - i, cMedium);
     }
-    drawLine(135 + newHalfAngleTop, GREEN_BRIGHT);
-    drawLine(225 - newHalfAngleTop, GREEN_BRIGHT);
+    drawLine(135 + newHalfAngleTop, cBright);
+    drawLine(225 - newHalfAngleTop, cBright);
   }
   if (newHalfAngleTop < oldHalfAngleTop) {
     for (int8_t i = oldHalfAngleTop; i > newHalfAngleTop; i--) {
-      drawLine(135 + i, GREEN_DARK);
-      drawLine(225 - i, GREEN_DARK);
+      drawLine(135 + i, cDark);
+      drawLine(225 - i, cDark);
     }
-    drawLine(135 + newHalfAngleTop, GREEN_BRIGHT);
-    drawLine(225 - newHalfAngleTop, GREEN_BRIGHT);
+    drawLine(135 + newHalfAngleTop, cBright);
+    drawLine(225 - newHalfAngleTop, cBright);
   }
   if (newHalfAngleBottom > oldHalfAngleBottom) {
     for (int8_t i = oldHalfAngleBottom; i < newHalfAngleBottom; i++) {
-      drawLine(315 + i, GREEN_MEDIUM);
-      drawLine(405 - i, GREEN_MEDIUM);
+      drawLine(315 + i, cMedium);
+      drawLine(405 - i, cMedium);
     }
-    drawLine(315 + newHalfAngleBottom, GREEN_BRIGHT);
-    drawLine(405 - newHalfAngleBottom, GREEN_BRIGHT);
+    drawLine(315 + newHalfAngleBottom, cBright);
+    drawLine(405 - newHalfAngleBottom, cBright);
   }
   if (newHalfAngleBottom < oldHalfAngleBottom) {
     for (int8_t i = oldHalfAngleBottom; i > newHalfAngleBottom; i--) {
-      drawLine(315 + i, GREEN_DARK);
-      drawLine(405 - i, GREEN_DARK);
+      drawLine(315 + i, cDark);
+      drawLine(405 - i, cDark);
     }
-    drawLine(315 + newHalfAngleBottom, GREEN_BRIGHT);
-    drawLine(405 - newHalfAngleBottom, GREEN_BRIGHT);
+    drawLine(315 + newHalfAngleBottom, cBright);
+    drawLine(405 - newHalfAngleBottom, cBright);
   }
   oldHalfAngleBottom = newHalfAngleBottom;
   oldHalfAngleTop = newHalfAngleTop;
-
 }
 

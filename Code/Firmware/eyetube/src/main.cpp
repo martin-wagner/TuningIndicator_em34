@@ -67,11 +67,19 @@ void setup(void)
       tube = Eyetube::create(Eyetube::Type::T_6U5, Eyetube::Color::C_GREEN,
           PIN_BACKLIGHT, -1, uart2, gfx, false);
       break;
-    case Eyetube::Type::T_EM34:
-      uart2.println("Type EM34");
-//      tube = Eyetube::create(Eyetube::Type::T_EM34, Eyetube::Color::C_GREEN,
-//          PIN_BACKLIGHT, -1, uart2, gfx, true);
-      tube = Eyetube::create(Eyetube::Type::T_EM34, Eyetube::Color::C_GREEN,
+    case Eyetube::Type::T_EM34_GREEN:
+      uart2.println("Type EM34 Green");
+      tube = Eyetube::create(Eyetube::Type::T_EM34_GREEN, Eyetube::Color::C_GREEN,
+                PIN_BACKLIGHT, PIN_EN, uart2, gfx, false);
+      break;
+    case Eyetube::Type::T_EM34_YELLOW:
+      uart2.println("Type EM34 Yellow");
+      tube = Eyetube::create(Eyetube::Type::T_EM34_YELLOW, Eyetube::Color::C_YELLOW,
+          PIN_BACKLIGHT, -1, uart2, gfx, false);
+      break;
+    case Eyetube::Type::T_EM34_BLUE:
+      uart2.println("Type EM34 Blue");
+      tube = Eyetube::create(Eyetube::Type::T_EM34_BLUE, Eyetube::Color::C_BLUE,
                 PIN_BACKLIGHT, PIN_EN, uart2, gfx, false);
       break;
     default:

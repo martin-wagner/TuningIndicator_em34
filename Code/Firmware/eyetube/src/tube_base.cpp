@@ -5,7 +5,9 @@ Eyetube* Eyetube::create(Type type, Color color, int32_t pinBacklightPwm,
     int32_t pinEnable, HardwareSerial &uart, Arduino_GFX *gfx, bool print)
 {
   switch (type) {
-    case Type::T_EM34:
+    case Type::T_EM34_GREEN:
+    case Type::T_EM34_YELLOW:
+    case Type::T_EM34_BLUE:
       return new TubeEm34(color, pinBacklightPwm, pinEnable, uart, gfx, print);
     default:
       return nullptr;

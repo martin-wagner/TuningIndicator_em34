@@ -8,7 +8,9 @@ class Eyetube {
   public:
     enum class Type {
       T_6U5 = 0,
-      T_EM34 = 1,
+      T_EM34_GREEN = 1 << 0,
+      T_EM34_YELLOW = 1 << 1,
+      T_EM34_BLUE = 1 << 2,
     };
     enum class Color {
       C_GREEN,
@@ -16,9 +18,17 @@ class Eyetube {
       C_BLUE
     };
 
-    static constexpr uint16_t GREEN_BRIGHT = RGB565(0, 255, 80);
-    static constexpr uint16_t GREEN_MEDIUM = RGB565(0, 180, 60);
-    static constexpr uint16_t GREEN_DARK = RGB565(10, 80, 35);
+    static constexpr uint16_t GREEN_BRIGHT = RGB565(0, 240, 80);
+    static constexpr uint16_t GREEN_MEDIUM = RGB565(10, 180, 60);
+    static constexpr uint16_t GREEN_DARK = RGB565(20, 60, 25);
+
+    static constexpr uint16_t YELLOW_BRIGHT = RGB565(0xd3, 0xf7, 0x63);
+    static constexpr uint16_t YELLOW_MEDIUM = RGB565(0xad, 0xd6, 0x30);
+    static constexpr uint16_t YELLOW_DARK = RGB565(0x41, 0x52, 0x0c);
+
+    static constexpr uint16_t BLUE_BRIGHT = RGB565(0x60, 0xcc, 0xb2);
+    static constexpr uint16_t BLUE_MEDIUM = RGB565(0x3f, 0x8e, 0x79);
+    static constexpr uint16_t BLUE_DARK = RGB565(0x26, 0x56, 0x49);
 
   public:
 
@@ -42,6 +52,24 @@ class Eyetube {
     Eyetube(Color color, int32_t pinBacklightPwm, int32_t pinEnable, HardwareSerial &uart, Arduino_GFX *gfx, bool print) :
       pinBacklightPwm(pinBacklightPwm), pinEnable(pinEnable), uart(uart), gfx(gfx), print(print)
     {
+      switch (color) {
+        case Color::C_GREEN:
+        default:
+          cBright = GREEN_BRIGHT;
+          cMedium = GREEN_MEDIUM;
+          cDark = GREEN_DARK;
+          break;
+        case Color::C_YELLOW:
+          cBright = YELLOW_BRIGHT;
+          cMedium = YELLOW_MEDIUM;
+          cDark = YELLOW_DARK;
+          break;
+        case Color::C_BLUE:
+          cBright = BLUE_BRIGHT;
+          cMedium = BLUE_MEDIUM;
+          cDark = BLUE_DARK;
+          break;
+      }
     }
 
     void drawLine(uint16_t angle, uint16_t lineColor)
@@ -57,6 +85,10 @@ class Eyetube {
     }
 
   protected:
+    uint16_t cBright;
+    uint16_t cMedium;
+    uint16_t cDark;
+
     int32_t pinBacklightPwm;
     int32_t pinEnable;
     HardwareSerial &uart;

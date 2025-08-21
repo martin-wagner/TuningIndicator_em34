@@ -1,20 +1,22 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "cd257864-529c-4fd8-bae9-39213abc8d77")
 	(paper "A4")
 	(title_block
 		(title "Adaptor octal base")
-		(date "2025-01-06")
-		(rev "1-A")
+		(date "2025-08-21")
+		(rev "2-A")
 		(company "Martin Wagner DL2WAG")
 		(comment 1 "Based on Retronics 6U5")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x05_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -88,57 +90,9 @@
 				)
 			)
 			(symbol "Conn_01x05_Socket_1_1"
-				(arc
-					(start 0 -4.572)
-					(mid -0.5058 -5.08)
-					(end 0 -5.588)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
-						(xy -1.27 -5.08) (xy -0.508 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -2.54) (xy -0.508 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
+						(xy -1.27 5.08) (xy -0.508 5.08)
 					)
 					(stroke
 						(width 0.1524)
@@ -162,7 +116,31 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 5.08) (xy -0.508 5.08)
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -0.508 -5.08)
 					)
 					(stroke
 						(width 0.1524)
@@ -173,33 +151,57 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 3.048)
-					(mid -0.5058 2.54)
-					(end 0 2.032)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 5.588)
+					(start 0 4.572)
 					(mid -0.5058 5.08)
-					(end 0 4.572)
+					(end 0 5.588)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 2.032)
+					(mid -0.5058 2.54)
+					(end 0 3.048)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -5.588)
+					(mid -0.5058 -5.08)
+					(end 0 -4.572)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -299,10 +301,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector_Generic:Conn_01x08"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -369,63 +374,19 @@
 			)
 			(symbol "Conn_01x08_1_1"
 				(rectangle
-					(start -1.27 -10.033)
-					(end 0 -10.287)
+					(start -1.27 8.89)
+					(end 1.27 -11.43)
 					(stroke
-						(width 0.1524)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 				(rectangle
-					(start -1.27 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
+					(start -1.27 7.747)
+					(end 0 7.493)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -446,8 +407,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 7.747)
-					(end 0 7.493)
+					(start -1.27 2.667)
+					(end 0 2.413)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -457,14 +418,58 @@
 					)
 				)
 				(rectangle
-					(start -1.27 8.89)
-					(end 1.27 -11.43)
+					(start -1.27 0.127)
+					(end 0 -0.127)
 					(stroke
-						(width 0.254)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(pin passive line
@@ -612,9 +617,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C_Polarized"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -770,11 +778,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:D_Zener"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -842,10 +855,10 @@
 			(symbol "D_Zener_0_1"
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -854,10 +867,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+						(xy 1.27 0) (xy -1.27 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -915,9 +928,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:FerriteBead"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -988,7 +1004,7 @@
 			(symbol "FerriteBead_0_1"
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 -1.2192)
+						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
 					)
 					(stroke
 						(width 0)
@@ -1012,7 +1028,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
+						(xy 0 -1.27) (xy 0 -1.2192)
 					)
 					(stroke
 						(width 0)
@@ -1061,9 +1077,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:Fuse"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1194,9 +1213,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1315,11 +1337,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Diode:1N5819WS"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1387,10 +1414,10 @@
 			(symbol "1N5819WS_0_1"
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -1411,10 +1438,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+						(xy 1.27 0) (xy -1.27 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -1460,12 +1487,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "GND_1"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1556,6 +1588,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Mechanical:MountingHole"
 			(pin_names
@@ -1638,12 +1671,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "VCC_1"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1715,7 +1753,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1727,7 +1765,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1758,12 +1796,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:PWR_FLAG"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1854,12 +1897,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:VCC"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1931,7 +1979,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1943,7 +1991,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1974,13 +2022,29 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
-	(junction
-		(at 57.15 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1f1bfc7f-ba48-4b10-bc8d-8f1d4ff71497")
+	(text "appr. 1.5mA in 300R cathode resistor"
+		(exclude_from_sim no)
+		(at 141.732 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "97d4bfa8-839c-4015-845b-6ac02935fa1a")
+	)
+	(text "Two assembly options:\n- Cathode is directly connected to ground, most of the radios.\n  -> assemble D2, D3, R3, omit R2\n- Cathode is not grounded. You need to check which heater pin is connected to chassis GND\n  -> omit R3\n  -> connect grounded heater pin to GND on R3 pad. \n  -> if dc bias on cathode is needed, calculate resistance and place on R2. Otherwise omit it."
+		(exclude_from_sim no)
+		(at 45.212 163.068 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c0f508eb-87b5-4e3c-9d54-a185aa66a15d")
 	)
 	(junction
 		(at 93.98 82.55)
@@ -1989,16 +2053,16 @@
 		(uuid "331ff75f-8044-4dbd-a70e-b76fa725f5ac")
 	)
 	(junction
+		(at 57.15 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a264455-ca19-4a57-803e-8aa7de2e64da")
+	)
+	(junction
 		(at 57.15 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4299c444-8512-4d7a-b46d-aa550c507a06")
-	)
-	(junction
-		(at 46.99 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9260801f-d67e-4aae-bf4e-8023e1cd56c9")
 	)
 	(junction
 		(at 115.57 82.55)
@@ -2011,12 +2075,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dacf632e-8e11-4b5b-b33e-23176339df12")
-	)
-	(junction
-		(at 57.15 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f8c6632c-9aad-4a90-b780-79216c23c6f6")
 	)
 	(no_connect
 		(at 95.25 38.1)
@@ -2044,16 +2102,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 87.63) (xy 46.99 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c8983d5-0ee4-4411-b0d6-95caa9f2169c")
-	)
-	(wire
-		(pts
 			(xy 59.69 48.26) (xy 62.23 48.26)
 		)
 		(stroke
@@ -2064,26 +2112,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 96.52) (xy 46.99 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a939d44-8375-40d5-a38e-ebc5b71cd038")
-	)
-	(wire
-		(pts
-			(xy 46.99 111.76) (xy 46.99 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d2d183d-37cb-4c2d-944a-bd36cdf2108a")
-	)
-	(wire
-		(pts
 			(xy 83.82 82.55) (xy 93.98 82.55)
 		)
 		(stroke
@@ -2091,6 +2119,26 @@
 			(type default)
 		)
 		(uuid "328d90b8-8a35-4078-9235-60358e3db33f")
+	)
+	(wire
+		(pts
+			(xy 36.83 104.14) (xy 43.18 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35d5f9a0-9bed-40c5-a93c-443f2f9a7113")
+	)
+	(wire
+		(pts
+			(xy 36.83 82.55) (xy 43.18 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "390e98fb-7deb-4d6d-ba51-0067ca622f36")
 	)
 	(wire
 		(pts
@@ -2124,36 +2172,6 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 111.76) (xy 57.15 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4975c683-d3a9-4944-838f-bfdcf0791148")
-	)
-	(wire
-		(pts
-			(xy 57.15 101.6) (xy 57.15 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a0ce39c-33bf-47d5-b150-553cab20e4b1")
-	)
-	(wire
-		(pts
-			(xy 35.56 101.6) (xy 57.15 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5429de9a-60da-42ad-bb20-3ff5403f0ced")
-	)
-	(wire
-		(pts
 			(xy 39.37 48.26) (xy 52.07 48.26)
 		)
 		(stroke
@@ -2164,6 +2182,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 104.14) (xy 59.69 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65f3e8e8-1e96-4c8c-9491-9ba535bc2872")
+	)
+	(wire
+		(pts
 			(xy 39.37 50.8) (xy 44.45 50.8)
 		)
 		(stroke
@@ -2171,6 +2199,16 @@
 			(type default)
 		)
 		(uuid "6c1f2dce-e99b-47da-a257-61112d79b45b")
+	)
+	(wire
+		(pts
+			(xy 36.83 92.71) (xy 43.18 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d2b7cfd-60b4-4c8c-9930-0edf34742af9")
 	)
 	(wire
 		(pts
@@ -2194,23 +2232,13 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 82.55) (xy 57.15 82.55)
+			(xy 50.8 82.55) (xy 57.15 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "84f0cf72-bafa-402e-a920-71d900d3980d")
-	)
-	(wire
-		(pts
-			(xy 57.15 95.25) (xy 57.15 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8709a61f-7796-4b19-ac81-6e37a32290ce")
 	)
 	(wire
 		(pts
@@ -2234,7 +2262,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 82.55) (xy 57.15 87.63)
+			(xy 57.15 82.55) (xy 57.15 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2274,16 +2302,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 96.52) (xy 46.99 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9debfa0-e545-417d-ad98-da841367b1aa")
-	)
-	(wire
-		(pts
 			(xy 115.57 93.98) (xy 115.57 99.06)
 		)
 		(stroke
@@ -2294,13 +2312,23 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 114.3) (xy 57.15 114.3)
+			(xy 50.8 104.14) (xy 57.15 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c6ea594f-abcf-4f82-9a1f-1bafe64ea1b6")
+		(uuid "c157bd64-cbad-4d8f-b012-008837e9b208")
+	)
+	(wire
+		(pts
+			(xy 50.8 92.71) (xy 57.15 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7135549-ee64-4d93-b54d-48216e7a8ec7")
 	)
 	(wire
 		(pts
@@ -2334,33 +2362,13 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 114.3) (xy 59.69 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e393b8c4-9754-4b55-b540-0b321e222012")
-	)
-	(wire
-		(pts
-			(xy 57.15 114.3) (xy 57.15 115.57)
+			(xy 57.15 104.14) (xy 57.15 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ee323ab9-4d10-4b37-a661-a25dd1d92396")
-	)
-	(wire
-		(pts
-			(xy 46.99 95.25) (xy 46.99 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f121d5f0-2725-493f-885c-0c8322421f73")
 	)
 	(wire
 		(pts
@@ -2372,15 +2380,27 @@
 		)
 		(uuid "f174d80d-1be6-4c67-8367-8767eea5969b")
 	)
-	(text "appr. 1.5mA in 300R cathode resistor"
-		(exclude_from_sim no)
-		(at 141.732 90.17 0)
+	(global_label "K"
+		(shape input)
+		(at 36.83 104.14 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(uuid "97d4bfa8-839c-4015-845b-6ac02935fa1a")
+		(uuid "1fe14993-646f-4bb0-8301-6d2c457c5849")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 32.5748 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "H1"
 		(shape output)
@@ -2560,7 +2580,7 @@
 	)
 	(global_label "H1"
 		(shape input)
-		(at 35.56 96.52 180)
+		(at 36.83 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2570,7 +2590,7 @@
 		)
 		(uuid "b5700730-3ac4-4566-b565-8575abd774a0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.689 96.52 0)
+			(at 31.959 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2582,7 +2602,7 @@
 	)
 	(global_label "H2"
 		(shape input)
-		(at 35.56 101.6 180)
+		(at 36.83 92.71 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2592,7 +2612,7 @@
 		)
 		(uuid "e7cd5737-8015-493c-9c12-150968f490a5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.689 101.6 0)
+			(at 31.959 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3034,7 +3054,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 59.69 114.3 270)
+		(at 59.69 104.14 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3043,7 +3063,7 @@
 		(fields_autoplaced yes)
 		(uuid "31641e27-415e-4e94-9ed9-56f83e8c796c")
 		(property "Reference" "#FLG02"
-			(at 61.595 114.3 0)
+			(at 61.595 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3052,7 +3072,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 63.5 114.2999 90)
+			(at 63.5 104.1399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3062,7 +3082,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 59.69 114.3 0)
+			(at 59.69 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3071,7 +3091,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 59.69 114.3 0)
+			(at 59.69 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3080,7 +3100,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 59.69 114.3 0)
+			(at 59.69 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3089,7 +3109,7 @@
 			)
 		)
 		(property "Comments" ""
-			(at 59.69 114.3 0)
+			(at 59.69 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3110,7 +3130,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N5819WS")
-		(at 46.99 91.44 270)
+		(at 46.99 82.55 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3118,7 +3138,7 @@
 		(dnp no)
 		(uuid "7288f28c-f8ab-4891-84ab-b3675c3a324c")
 		(property "Reference" "D2"
-			(at 49.53 91.44 0)
+			(at 46.99 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3126,7 +3146,7 @@
 			)
 		)
 		(property "Value" "1N5819W"
-			(at 51.435 91.44 0)
+			(at 46.99 86.995 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3134,7 +3154,7 @@
 			)
 		)
 		(property "Footprint" "D_SOD-323_HandSoldering"
-			(at 42.545 91.44 0)
+			(at 46.99 78.105 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3143,7 +3163,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 46.99 91.44 0)
+			(at 46.99 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3152,7 +3172,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 46.99 91.44 0)
+			(at 46.99 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3161,7 +3181,7 @@
 			)
 		)
 		(property "Comments" ""
-			(at 46.99 91.44 0)
+			(at 46.99 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3191,7 +3211,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7be40f86-6893-4c19-8779-c31f9ff4ea0d")
 		(property "Reference" "R2"
 			(at 117.348 88.9578 0)
@@ -3236,6 +3255,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Placement" "NP"
+			(at 115.57 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -3533,7 +3560,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N5819WS")
-		(at 57.15 91.44 270)
+		(at 46.99 92.71 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3541,7 +3568,7 @@
 		(dnp no)
 		(uuid "b32c48bd-d7d8-4845-a302-d3d70d034987")
 		(property "Reference" "D3"
-			(at 61.595 91.44 0)
+			(at 46.99 97.155 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3549,7 +3576,7 @@
 			)
 		)
 		(property "Value" "1N5819W"
-			(at 59.69 91.44 0)
+			(at 46.99 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3557,7 +3584,7 @@
 			)
 		)
 		(property "Footprint" "D_SOD-323_HandSoldering"
-			(at 52.705 91.44 0)
+			(at 46.99 88.265 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3566,7 +3593,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 57.15 91.44 0)
+			(at 46.99 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3575,7 +3602,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 91.44 0)
+			(at 46.99 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3584,7 +3611,7 @@
 			)
 		)
 		(property "Comments" ""
-			(at 57.15 91.44 0)
+			(at 46.99 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3601,81 +3628,6 @@
 			(project "octal_base"
 				(path "/cd257864-529c-4fd8-bae9-39213abc8d77"
 					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N5819WS")
-		(at 46.99 107.95 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bc826c3d-4cb5-4fdc-810a-bee5cac09701")
-		(property "Reference" "D4"
-			(at 51.435 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N5819W"
-			(at 49.53 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "D_SOD-323_HandSoldering"
-			(at 42.545 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 46.99 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 46.99 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comments" ""
-			(at 46.99 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "9a5180b2-bc6b-478a-b8ed-135ed599e3c7")
-		)
-		(pin "1"
-			(uuid "a9e1ca74-601f-4d97-9914-3b455befc205")
-		)
-		(instances
-			(project "octal_base"
-				(path "/cd257864-529c-4fd8-bae9-39213abc8d77"
-					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -3895,7 +3847,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 57.15 115.57 0)
+		(at 57.15 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3903,7 +3855,7 @@
 		(dnp no)
 		(uuid "e527187d-1b1c-4b2b-9a5f-fe15c35e4131")
 		(property "Reference" "#PWR06"
-			(at 57.15 121.92 0)
+			(at 57.15 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3912,7 +3864,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 57.15 119.38 0)
+			(at 57.15 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3920,7 +3872,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 115.57 0)
+			(at 57.15 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3929,7 +3881,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 115.57 0)
+			(at 57.15 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3938,7 +3890,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 115.57 0)
+			(at 57.15 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3959,41 +3911,32 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:1N5819WS")
-		(at 57.15 107.95 270)
+		(lib_id "Device:R")
+		(at 46.99 104.14 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f0c32e16-f330-45f5-aeea-d14c8b31aadf")
-		(property "Reference" "D5"
-			(at 61.595 107.95 0)
+		(uuid "ef55f0d0-53a7-4430-bbc3-a6d1f75051bd")
+		(property "Reference" "R3"
+			(at 46.736 106.934 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1N5819W"
-			(at 59.69 107.95 0)
+		(property "Value" "0"
+			(at 46.99 101.4038 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "D_SOD-323_HandSoldering"
-			(at 52.705 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 57.15 107.95 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 46.99 105.918 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4001,8 +3944,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 57.15 107.95 0)
+		(property "Datasheet" "~"
+			(at 46.99 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4010,24 +3953,25 @@
 				(hide yes)
 			)
 		)
-		(property "Comments" ""
-			(at 57.15 107.95 0)
+		(property "Description" "Resistor"
+			(at 46.99 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "eb7e3211-0514-417b-be3f-01c81404832b")
 		)
 		(pin "1"
-			(uuid "bfdcb184-63f3-42bb-bd05-d5f80a561d89")
+			(uuid "7b111a62-beb3-443a-aa2b-25c909a0ee39")
+		)
+		(pin "2"
+			(uuid "9454060c-47fb-4ef5-8414-a77fc923b7ae")
 		)
 		(instances
-			(project "U6A_Base"
+			(project "octal_base"
 				(path "/cd257864-529c-4fd8-bae9-39213abc8d77"
-					(reference "D5")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -4124,4 +4068,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

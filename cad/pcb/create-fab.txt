@@ -1,7 +1,7 @@
 Fertigungsdatensatz generieren in KiCad
 
 - plot scm in eeschema (scm)
-- export BOM in eeschema - tools -> generate bill of material -> Script "bom_csv_grouped_by_value". Datei ohne Endung umbenennen nach stueckliste.csv, andere Dateien loeschen.
+- export BOM in eeschema - tools -> generate legacy bill of material -> Script "bom_csv_grouped_by_value". Datei ohne Endung umbenennen nach stueckliste.csv, andere Dateien loeschen.
 - Gerber photoplot - file -> plot -> "Gerber", disable "plot footprint values", Lagenauswahl nach belegten Lagen
     -> *Cu, *Paste, *SilkS, *Mask, Edge.Cuts
     - Button "Plot"

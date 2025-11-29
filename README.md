@@ -4,13 +4,13 @@ TuningIndicator EM34
 
 Tube in operation
 
-    ![EM34 - Replacement](tube.jpg)
+![EM34 - Replacement](tube.jpg)
 
 Tube in comparision to a Philips EM34
 
-    ![EM34 - Replacement](assembly.jpg)
+![EM34 - Replacement](assembly.jpg)
 
-    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nyfVSezJzGyW9C1P/0.jpg)](https://www.youtube.com/watch?v=nyfVSezJzGyW9C1P)
+[![EM34 - Replacement](https://img.youtube.com/vi/Ubn03e_z3jU/0.jpg)](https://www.youtube.com/watch?v=Ubn03e_z3jU)
 
 ## Credits
 

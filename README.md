@@ -10,6 +10,8 @@ Tube in comparision to a Philips EM34
 
 ![EM34 - Replacement](assembly.jpg)
 
+Youtube:
+
 [![EM34 - Replacement](https://img.youtube.com/vi/Ubn03e_z3jU/0.jpg)](https://www.youtube.com/watch?v=Ubn03e_z3jU)
 
 ## Credits
@@ -32,7 +34,7 @@ Be aware to use the EM34 BOM, not the 6U5 one!
 
 Can be found on Ebay / Aliexpress for approx. 3 Euro. Search terms: _lcd 0.99 12pin_ . Writing _NFP099-01A_ .
 
-    ![LCD NFP099-01A](lcd.jpg)
+![LCD NFP099-01A](lcd.jpg)
 
 ### PCB / Housing
 
